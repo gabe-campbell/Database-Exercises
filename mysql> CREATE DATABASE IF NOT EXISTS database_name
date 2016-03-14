@@ -1,0 +1,36 @@
+mysql> CREATE DATABASE IF NOT EXISTS database_name
+// creates a database if no database by that name exists 
+// prevents error from duplicate databases
+
+mysql> SHOW DATABASES;
+// shows list of databases
+
+mysql> USE <database>;
+// use a specific database
+
+mysql> select database();
+// shows currently selected database
+
+mysql> SHOW CREATE DATABASE database_name;
+// shows the line that was run in order to create the database
+// used to recreate a database on a different server by repeating the command
+
+mysql> DROP DATABASE database_name;
+mysql> DROP DATABASE IF EXISTS database_name;
+// use with caution
+// will not prompt for confirmation, will just delete the database
+// deletes database
+// always save a copy of a database efore deleteing a database to
+// prevent loss of data
+
+// schema = the layout of the database, the columns and rows of the
+// database themselves
+// database and schema can be used interchangeably within MySQL
+
+ansible-playbook ansible/playbooks/vagrant/mysql/database.yml
+// creates a new user and sets privilages for all tables
+// run within the vagrant-lamp folder
+
+// reserved keywords cannot be used for database names
+// keywords enclosed in ` ` can be used, the " ` " used like an
+// escape character
